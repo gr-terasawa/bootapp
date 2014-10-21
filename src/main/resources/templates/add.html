@@ -33,29 +33,29 @@
 	<div th:include="fragments/navBar" th:remove="tag">REPLACE BEFORE　COMMITTING</div>
 
 	<div class="container" role="main">
-		<h3>登録</h3>
+		<h3>顧客登録</h3>
 		<div class="well bs-component">
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="/customer" method="post">
 				<fieldset>
 					<legend>顧客情報</legend>
 					<div class="form-group">
 						<label for="inputName" class="col-lg-2 control-label">氏名</label>
 						<div class="col-lg-10">
-							<input type="text" class="form-control" id="inputName"
+							<input type="text" class="form-control" id="inputName" name="name"
 							placeholder="氏名" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputKana" class="col-lg-2 control-label">カナ</label>
 						<div class="col-lg-10">
-							<input type="password" class="form-control" id="inputKana"
+							<input type="text" class="form-control" id="inputKana"
 							placeholder="カタカナで記載下さい" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label for="inputZip" class="col-lg-2 control-label">郵便番号</label>
 						<div class="col-lg-10">
-							<input type="password" class="form-control" id="inputZip"
+							<input type="text" class="form-control" id="inputZip"
 							placeholder="郵便番号" />
 						</div>
 					</div>
@@ -69,7 +69,7 @@
 					<div class="form-group">
 						<label for="inputPhone" class="col-lg-2 control-label">電話番号</label>
 						<div class="col-lg-10">
-							<input type="password" class="form-control" id="inputPhone"
+							<input type="text" class="form-control" id="inputPhone"
 							placeholder="09022223333" />
 							<span class="help-block">※ハイフン無し</span>
 						</div>

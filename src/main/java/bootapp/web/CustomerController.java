@@ -40,7 +40,7 @@ public class CustomerController {
     	Customer savedCustomer = customerService.save(customer);
     	log.info(savedCustomer.getId() + ":" + savedCustomer.getName());
 
-        return "index";
+        return "redirect:/customer";
     }
 
     @RequestMapping(value = "/customer" ,method = RequestMethod.GET)
