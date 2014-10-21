@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+
+<head th:fragment="headTag">
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>Boot :: App</title>
+
+<link href="css/page.css" th:href="@{/css/page.css}" rel="stylesheet" />
+
+<script th:src="@{/webjars/jquery/2.1.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootswatch-flatly/3.2.0/js/bootstrap.min.js}"></script>
+
+<!--
+    <link th:href="@{/webjars/bootswatch-flatly/3.2.0/css/bootstrap-theme.min.css}" rel="stylesheet" />
+ -->
+<link
+	th:href="@{/webjars/bootswatch-flatly/3.2.0/css/bootstrap.min.css}"
+	rel="stylesheet" />
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body role="document">
+	<div th:include="fragments/navBar" th:remove="tag">REPLACE BEFORE　COMMITTING</div>
+
+	<div class="container" role="main">
+		<h3>登録</h3>
+		<div class="well bs-component">
+			<form class="form-horizontal">
+				<fieldset>
+					<legend>顧客情報</legend>
+					<div class="form-group">
+						<label for="inputName" class="col-lg-2 control-label">氏名</label>
+						<div class="col-lg-10">
+							<input type="text" class="form-control" id="inputName"
+							placeholder="氏名" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputKana" class="col-lg-2 control-label">カナ</label>
+						<div class="col-lg-10">
+							<input type="password" class="form-control" id="inputKana"
+							placeholder="カタカナで記載下さい" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputZip" class="col-lg-2 control-label">郵便番号</label>
+						<div class="col-lg-10">
+							<input type="password" class="form-control" id="inputZip"
+							placeholder="郵便番号" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="textAreaAddress" class="col-lg-2 control-label">住所</label>
+						<div class="col-lg-10">
+							<textarea class="form-control" rows="3" id="textAreaAddress"></textarea>
+							<span class="help-block">※ここに注意書</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="inputPhone" class="col-lg-2 control-label">電話番号</label>
+						<div class="col-lg-10">
+							<input type="password" class="form-control" id="inputPhone"
+							placeholder="09022223333" />
+							<span class="help-block">※ハイフン無し</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-lg-offset-2">
+							<button class="btn btn-default">Cancel</button>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+
+	<table th:replace="fragments/footer :: footer" class="footer">REPLACE　BEFORE COMMITTING</table>
+</body>
+
+</html>

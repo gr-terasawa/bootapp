@@ -1,8 +1,8 @@
 package bootapp.web;
 
-import javax.validation.Valid;
+import java.util.List;
 
-import net.spy.memcached.tapmessage.RequestMessage;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,8 +14,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import com.sun.research.ws.wadl.Request;
 
 import bootapp.domain.Customer;
 import bootapp.service.CustomerService;
@@ -48,7 +46,16 @@ public class CustomerController {
     @RequestMapping(value = "/customer" ,method = RequestMethod.GET)
     public String allUser(Model model, Pageable pageable) {
         PageWrapper<Customer> page = new PageWrapper<Customer>(customerService.getAllCustomers(pageable), "/customer");
-        model.addAttribute("page", page);
+    	model.addAttribute("page", page);
+        List<Customer> customers = page.getContent();
+        model.addAttribute("customers", customers);
         return "page";
     }
+
+    @RequestMapping(value = "customer/add", method = RequestMethod.GET)
+    public String add(Model model) {
+    	log.info("/customer/add");
+        return "add";
+    }
+
 }

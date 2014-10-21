@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
 import bootapp.domain.Customer;
-import bootapp.domain.CustomerRepository;
+import bootapp.repository.CustomerRepository;
 
 @Component
 public class CustomerServiceImpl implements CustomerService {

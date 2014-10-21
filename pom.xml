@@ -15,8 +15,20 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.2.0.M2</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<start-class>bootapp.Application</start-class>
+		<java.version>1.8</java.version>
+
+        <!-- Web dependencies -->
+        <webjars-bootstrap.version>3.2.0-1</webjars-bootstrap.version>
+        <webjars-jquery.version>2.1.1</webjars-jquery.version>
+        <webjars-jquery-ui.version>1.11.0</webjars-jquery-ui.version>
+        <webjars-jquery-ui-themes.version>1.10.3</webjars-jquery-ui-themes.version>
+	</properties>
 
 	<dependencies>
 		<dependency>
@@ -37,26 +49,43 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.lazyluke</groupId>
+			<artifactId>log4jdbc-remix</artifactId>
+			<version>0.2.7</version>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-jersey</artifactId>
+			<artifactId>spring-boot-actuator</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>net.spy</groupId>
-			<artifactId>spymemcached</artifactId>
-			<version>2.11.4</version>
-		</dependency>
-	</dependencies>
 
-	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<start-class>bootapp.Application</start-class>
-		<java.version>1.8</java.version>
-	</properties>
+        <!-- Webjars (static dependencies distributed as JAR files) -->
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootswatch-flatly</artifactId>
+            <version>${webjars-bootstrap.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>${webjars-jquery.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui</artifactId>
+            <version>${webjars-jquery-ui.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery-ui-themes</artifactId>
+            <version>${webjars-jquery-ui-themes.version}</version>
+        </dependency>
+
+	</dependencies>
 
 	<build>
 		<plugins>
@@ -64,10 +93,10 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<dependencies>
-				<dependency>
-					<groupId>org.springframework</groupId>
-					<artifactId>springloaded</artifactId>
-				</dependency>
+					<dependency>
+						<groupId>org.springframework</groupId>
+						<artifactId>springloaded</artifactId>
+					</dependency>
 				</dependencies>
 			</plugin>
 		</plugins>
@@ -109,6 +138,5 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 
 </project>
