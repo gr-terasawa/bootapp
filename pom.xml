@@ -49,6 +49,10 @@
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
+			<groupId>org.flywaydb</groupId>
+			<artifactId>flyway-core</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.lazyluke</groupId>
 			<artifactId>log4jdbc-remix</artifactId>
 			<version>0.2.7</version>
@@ -84,7 +88,11 @@
             <artifactId>jquery-ui-themes</artifactId>
             <version>${webjars-jquery-ui-themes.version}</version>
         </dependency>
-
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>bootstrap-datetimepicker</artifactId>
+		    <version>6aa746736d</version>
+		</dependency>
 	</dependencies>
 
 	<build>
