@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -29,7 +30,8 @@ public class Customer {
 	@NotEmpty
 	private String kana;
 
-	@Column(name = "zip", length = 8)
+	@Column(name = "zip")
+	@Pattern(regexp = "^\\d{3}-\\d{4}$")
 	private String zip;
 
 	@Column(name = "address")

@@ -47,39 +47,39 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputKana" class="col-lg-2 control-label">カナ</label>
+						<label for="kana" class="col-lg-2 control-label">カナ</label>
 						<div class="col-lg-10">
-							<input type="text" class="form-control" id="inputKana"
-							placeholder="カタカナで記載下さい" />
+							<input type="text" class="form-control" th:field="*{kana}" placeholder="カタカナで記載下さい" />
+							<span class="help-block" th:errors="*{kana}">[error]</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputZip" class="col-lg-2 control-label">郵便番号</label>
+						<label for="zip" class="col-lg-2 control-label">郵便番号</label>
 						<div class="col-lg-10">
-							<input type="text" class="form-control" id="inputZip"
-							placeholder="郵便番号" />
+							<input type="text" class="form-control" th:field="*{zip}" placeholder="郵便番号" />
+							<span class="help-block" th:errors="*{zip}">[error]</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputBirthday" class="col-lg-2 control-label">誕生日</label>
+						<label for="birthday" class="col-lg-2 control-label">誕生日</label>
 						<div class="col-lg-10">
-							<input type="text" class="form-control" id="inputBirthday"
-								placeholder="誕生日" />
+							<input type="text" class="form-control" th:field="*{birthday}" placeholder="誕生日" />
+							<span class="help-block" th:errors="*{birthday}">[error]</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="textAreaAddress" class="col-lg-2 control-label">住所</label>
+						<label for="address" class="col-lg-2 control-label">住所</label>
 						<div class="col-lg-10">
-							<textarea class="form-control" rows="3" id="textAreaAddress"></textarea>
-							<span class="help-block">※ここに注意書</span>
+							<input type="text" class="form-control" th:field="*{address}" placeholder="住所" />
+							<span class="help-block" th:errors="*{address}">[error]</span>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="inputPhone" class="col-lg-2 control-label">電話番号</label>
+						<label for="phone" class="col-lg-2 control-label">電話番号</label>
 						<div class="col-lg-10">
-							<input type="text" class="form-control" id="inputPhone"
-							placeholder="09022223333" />
+							<input type="text" class="form-control" th:field="*{phone}" placeholder="09022223333" />
 							<span class="help-block">※ハイフン無し</span>
+							<span class="help-block" th:errors="*{phone}">[error]</span>
 						</div>
 					</div>
 					<div class="form-group">
@@ -97,7 +97,7 @@
 </body>
 <script type="text/javascript">
   $(function() {
-	$('#inputBirthday').datetimepicker({
+	$('#birthday').datetimepicker({
 	    format: 'yyyy-mm-dd',
 	    todayHighlight: true,
 	    autoclose: true,
