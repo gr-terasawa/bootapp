@@ -45,7 +45,7 @@
 				<tr th:each="customer : ${customers}">
 					<td th:text="${customer.id}">1</td>
 					<td>
-						<a href="#"	th:href="@{|/customer/${customer.id}|}"
+						<a href="#"	th:href="@{|/customer/${customer.id}/edit|}"
 							th:text="${customer.name}">寺沢岳春</a>
 					</td>
 					<td th:text="${customer.kana}">テラサワタケハル</td>
@@ -86,7 +86,7 @@
 		  </div>
 		</div>
 		<button type="button" class="btn btn-primary" onclick="location.href='/customer/add'">Add</button>
-        
+
         </div>
 
         <table th:replace="fragments/footer :: footer" class="footer">REPLACE BEFORE COMMITTING</table>

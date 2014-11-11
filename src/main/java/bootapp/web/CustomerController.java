@@ -42,7 +42,7 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/customer/add" ,method = RequestMethod.POST)
-    public String createUser(@Valid Customer customer, BindingResult result,
+    public String create(@Valid Customer customer, BindingResult result,
             SessionStatus status) {
         if (result.hasErrors()) {
             return "add";
@@ -68,6 +68,26 @@ public class CustomerController {
     	Customer customer = new Customer();
     	model.addAttribute("customer", customer);
         return "add";
+    }
+
+    @RequestMapping(value = "customer/{id}/edit", method = RequestMethod.GET)
+    public String edit(@PathVariable Long id, Model model) {
+    	Customer customer = customerService.selectCustomer(id);
+    	model.addAttribute("customer", customer);
+        return "add";
+    }
+
+    @RequestMapping(value = "customer/{id}/edit", method = RequestMethod.PUT)
+    public String update(@PathVariable Long id, @Valid Customer customer, BindingResult result,
+            SessionStatus status) {
+        if (result.hasErrors()) {
+            return "add";
+        } else {
+        	customer.setId(id);
+            this.customerService.save(customer);
+            status.setComplete();
+            return "redirect:/customer";
+        }
     }
 
 }

@@ -46,35 +46,35 @@
 							<span class="help-block" th:errors="*{name}">[error]</span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" th:classappend="${#fields.hasErrors('kana')} ? has-error">
 						<label for="kana" class="col-lg-2 control-label">カナ</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" th:field="*{kana}" placeholder="カタカナで記載下さい" />
 							<span class="help-block" th:errors="*{kana}">[error]</span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" th:classappend="${#fields.hasErrors('zip')} ? has-error">
 						<label for="zip" class="col-lg-2 control-label">郵便番号</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" th:field="*{zip}" placeholder="郵便番号" />
 							<span class="help-block" th:errors="*{zip}">[error]</span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" th:classappend="${#fields.hasErrors('birthday')} ? has-error">
 						<label for="birthday" class="col-lg-2 control-label">誕生日</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" th:field="*{birthday}" placeholder="誕生日" />
 							<span class="help-block" th:errors="*{birthday}">[error]</span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" th:classappend="${#fields.hasErrors('address')} ? has-error">
 						<label for="address" class="col-lg-2 control-label">住所</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" th:field="*{address}" placeholder="住所" />
 							<span class="help-block" th:errors="*{address}">[error]</span>
 						</div>
 					</div>
-					<div class="form-group">
+					<div class="form-group" th:classappend="${#fields.hasErrors('phone')} ? has-error">
 						<label for="phone" class="col-lg-2 control-label">電話番号</label>
 						<div class="col-lg-10">
 							<input type="text" class="form-control" th:field="*{phone}" placeholder="09022223333" />
